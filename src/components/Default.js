@@ -1,6 +1,24 @@
 import React, { Component } from "react";
 
 class Default extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: ""
+    };
+
+    const existing = [
+      {
+        company: "Harper",
+        domain: ["Perez"]
+      },
+      { company: "", domain: [""] },
+      {},
+      {},
+      {}
+    ];
+  }
+
   render() {
     return (
       <div className="Parent-Default">
