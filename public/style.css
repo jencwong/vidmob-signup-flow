@@ -1,15 +1,36 @@
 /* General Styling throughout*/
 
+@font-face {
+  font-family: "ProximaNova_regular";
+  src: url("fonts/proximanova-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "ProximaNova_bold";
+  src: url("fonts/tt-commons-bold.woff") format("woff");
+}
+
+body {
+  background-color: #2c9db7;
+  font-family: "ProximaNova_regular";
+}
+
 .Background {
   width: 100vw;
   height: 100vh;
   background-color: #2c9db7;
 }
 
+.modal-background {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 .Log-In {
   width: 37px;
   height: 13px;
-  font-family: "Montserrat";
+  font-family: "ProximaNova_bold";
   font-size: 11px;
   font-weight: bold;
   font-stretch: normal;
@@ -32,8 +53,8 @@
 .Already-have-an-acco {
   width: 154px;
   height: 17px;
-  font-family: "Montserrat";
-  font-size: 12px;
+  font-family: "ProximaNova_regular";
+  font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -56,6 +77,23 @@
   object-fit: contain;
 }
 
+.intercomCircle {
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
+  background-color: #283647;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+}
+
+.intercom {
+  width: 28.3px;
+  height: 31.9px;
+  margin: 14.1px 15.8px;
+}
+
 /* Default View Container */
 .Parent-Default {
   /* width: 100vw;*/
@@ -71,14 +109,14 @@
   border-radius: 2px;
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
-  margin-top: -8.2%;
+  margin-top: -9%;
 }
 
 .Get-started-on-VidMo {
   width: 191px;
   height: 24px;
-  font-family: "Montserrat";
-  font-size: 17px;
+  font-family: "ProximaNova_regular";
+  font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -92,7 +130,7 @@
 .Enter-your-work-emai {
   width: 320px;
   height: 20px;
-  font-family: "Montserrat";
+  font-family: "ProximaNova_regular";
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -119,11 +157,16 @@
   margin: 20px 30px auto 30px;
 }
 
+input {
+  font-family: "ProximaNova_regular";
+  text-indent: 15px;
+}
+
 ::placeholder {
   width: 127px;
   height: 20px;
   opacity: 0.5;
-  font-family: "Montserrat";
+  font-family: "ProximaNova_regular";
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -147,7 +190,7 @@
 #next {
   width: 35px;
   height: 16px;
-  font-family: "Montserrat";
+  font-family: "ProximaNova_bold";
   font-size: 13px;
   font-weight: bold;
   font-stretch: normal;
