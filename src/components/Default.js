@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import Popup from "reactjs-popup";
-import { redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // import { withRouter } from "react-router";
+
+const bg = {
+  overlay: {
+    background: "rgba(0, 0, 0, 0.6)"
+  }
+};
 
 class Default extends Component {
   constructor(props) {
@@ -20,7 +26,7 @@ class Default extends Component {
       ],
       existingCompany: false,
       email: "",
-      redirect: null,
+      redirect: false,
       open: false
       //   redirect: false
     };
@@ -80,14 +86,18 @@ class Default extends Component {
     console.log(userDomain);
     if (this.state.existingDomain.includes(userDomain)) {
       console.log(true);
-
       this.setState({ open: true });
     } else {
+      console.log(false);
       this.setState({ redirect: true });
     }
   }
 
   render() {
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to="/get-started-section" />;
+    }
     return (
       <div className="Parent-Default">
         <div className="Container-Default">
@@ -110,25 +120,42 @@ class Default extends Component {
               </button>
             </div>
           </form>
-          <div className="modal-background">
+          <div>
             <Popup
+              className="popup-background"
               open={this.state.open}
               closeOnDocumentClick
               onClose={this.closeModal}
+              styles={bg}
             >
               <div className="modal">
-                <div>
-                  <a className="close" onClick={this.closeModal}>
-                    &times;
+                <div className="popup-button">
+                  <a
+                    className="close"
+                    onClick={this.closeModal}
+                    href="sign-up-section"
+                  >
+                    CLOSE{" "}
+                    <img
+                      id="ic_clear"
+                      src="images/ic-clear.png"
+                      alt="clear icon"
+                    ></img>
                   </a>
-                  <div>
-                    <img></img>
-                    <h3>That looks familiar</h3>
-                    <p>
-                      That email looks like it's part of an existing company.
-                      Check your email for an invite to your company
-                    </p>
-                  </div>
+                </div>
+                <div className="popup-circle">
+                  <img
+                    className="popup-image"
+                    src="images/ic-large-email-generic.png"
+                    alt="email icon"
+                  ></img>
+                </div>
+                <div>
+                  <h3 id="popup-header">That looks familiar</h3>
+                  <p id="popup-text">
+                    That email looks like it's part of an existing company.
+                    Check your email for an invite to your company.
+                  </p>
                 </div>
               </div>
             </Popup>

@@ -13,6 +13,7 @@
 body {
   background-color: #2c9db7;
   font-family: "ProximaNova_regular";
+  box-sizing: border-box;
 }
 
 .Background {
@@ -176,6 +177,7 @@ input {
   text-align: left;
   color: #798898;
   text-indent: 15px;
+  padding-right: 15px;
 }
 
 .next {
@@ -199,4 +201,186 @@ input {
   letter-spacing: 0.2px;
   text-align: center;
   color: #ffffff;
+}
+
+/* close button */
+.close {
+  width: 39px;
+  height: 15px;
+  font-family: "ProximaNova_regular";
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  text-align: right;
+  color: #ffffff;
+  position: absolute;
+  top: -20px;
+  right: 17px;
+  text-decoration: none;
+  /* margin: 0 0 5px 0; */
+  /* display: inline !important; */
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+a:hover {
+  cursor: auto;
+}
+
+.popup-content,
+.popup-background-content {
+  width: 320px !important;
+  height: 320px;
+  border-radius: 2px;
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+}
+
+.popup-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 70px;
+  background-color: #2c9db7;
+  margin: 40px 110px auto 110px;
+}
+
+.popup-image {
+  margin: 25px 22.1px;
+}
+
+#popup-header {
+  width: 250px;
+  height: 24px;
+  font-family: "ProximaNova_regular";
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  text-align: center;
+  color: #283647;
+  margin: 20px 35px;
+}
+
+#popup-text {
+  width: 260px;
+  height: 72px;
+  font-family: "ProximaNova_regular";
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  text-align: center;
+  color: #798898;
+  margin: 20px 30px;
+}
+
+#ic_clear {
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+  /* background-color: #ffffff; */
+  float: right;
+  position: absolute;
+  margin: 0 0 0 7px;
+}
+
+/* Finish Setup */
+
+#sign-up-section {
+  display: flex;
+  justify-content: center;
+}
+
+.join-vidmob {
+  width: 400px;
+  height: 420px;
+  border-radius: 2px;
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  margin: 101px auto;
+}
+
+#join-vidmob-header {
+  width: 185px;
+  height: 24px;
+  font-family: "ProximaNova_regular";
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #283647;
+  margin: 40px 185px auto 30px;
+}
+
+#Your-email-is-associ {
+  width: 320px;
+  height: 40px;
+  font-family: "ProximaNova_regular";
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: #798898;
+  margin: 5px 50px auto 30px;
+}
+
+.Input-Name-Frame {
+  width: 165px;
+  height: 50px;
+  border-radius: 2px;
+  border: solid 1px #e2e6eb;
+  box-sizing: border-box;
+}
+
+#input-box2 {
+  margin: 20px 5px auto 30px;
+  padding: 0px;
+}
+
+#input-box3 {
+  margin: 20px 30px auto 5px;
+  padding: 0px;
+}
+
+.Input-Frame {
+  width: 340px;
+  height: 50px;
+  border-radius: 2px;
+  border: solid 1px #e2e6eb;
+  margin: 10px 30px auto 30px;
+}
+
+.terms-container {
+  display: flex;
+  justify-content: center;
+}
+
+.terms {
+  width: 354px;
+  height: 17px;
+  font-family: ProximaNova;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: #e2e6eb;
+  margin-top: 30px;
 }
