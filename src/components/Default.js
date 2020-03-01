@@ -28,7 +28,6 @@ class Default extends Component {
       email: "",
       redirect: false,
       open: false
-      //   redirect: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

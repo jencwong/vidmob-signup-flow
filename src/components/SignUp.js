@@ -27,7 +27,7 @@ class SignUp extends Component {
               placeholder="Last Name"
               id="input-box3"
               name="text"
-              lastName={this.props.LastName}
+              lastName={this.props.lastName}
               onChange={event => this.handleChange(event)}
             ></input>
             <input
@@ -36,7 +36,7 @@ class SignUp extends Component {
               placeholder="Display Name                                                  (optional)"
               id="input-box4"
               name="text"
-              lastName={this.props.DisplayName}
+              displayName={this.props.displayName}
               onChange={event => this.handleChange(event)}
             ></input>
             <input
@@ -45,11 +45,11 @@ class SignUp extends Component {
               placeholder="Password"
               id="input-box5"
               name="text"
-              lastName={this.props.Password}
+              password={this.props.password}
               onChange={event => this.handleChange(event)}
             ></input>
-            <button className="next">
-              <span id="next">SIGN UP</span>
+            <button className="signup">
+              <span id="signup">SIGN UP</span>
             </button>
             <div className="terms-container">
               <p className="terms">

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import { withRouter } from "react-router";
+// import { withRouter } from "react-router";
 import Default from "./components/Default";
 import SignUp from "./components/SignUp";
 import GetStarted from "./components/GetStarted";
+import CompanySignUp from "./components/CompanySignUp";
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path="/" component={Default} exact />
             <Route path="/sign-up-section" component={SignUp} />
             <Route path="/get-started-section" component={GetStarted} />
+            <Route path="/company-signup-section" component={CompanySignUp} />
             <div className="intercomCircle">
               <svg
                 className="intercom"
