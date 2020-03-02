@@ -31,7 +31,14 @@ class GetStarted extends Component {
   render() {
     const { redirect } = this.state;
     if (redirect) {
-      return <Redirect to="/company-signup-section" />;
+      return (
+        <Redirect
+          to={{
+            pathname: "/company-signup-section"
+            // state: { newDomain: this.props.location.state.newDomain }
+          }}
+        />
+      );
     }
     return (
       <div id="get-started-section">

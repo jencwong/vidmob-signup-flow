@@ -12,11 +12,20 @@ class CompanySignUp extends Component {
     this.state = {
       getDomain: false,
       domains: [],
+      //   domains: ["sample.com", "test.com", "ymail.com"],
       inviteOnly: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  //   componentDidMount() {
+  //     console.log("hello");
+  //     console.log(this.props.location.state.newDomain);
+  //     this.setState({
+  //       domains: [...this.state.domains, this.props.location.state.newDomain]
+  //     });
+  //   }
 
   onClickDomains = event => {
     this.setState({ getDomain: true, inviteOnly: false });
@@ -70,6 +79,7 @@ class CompanySignUp extends Component {
             <MyDomain
               domainIsInput={this.state.getDomain}
               onDomainsChange={this.onDomainsChange}
+              domains={this.state.domains}
             />
 
             {/* <input
@@ -94,7 +104,7 @@ class CompanySignUp extends Component {
               type="submit"
               className="signup"
               onClick={this.handleSubmit}
-              disabled={this.state.domains.length === 0 ? true : false}
+              //   disabled={this.state.domains.length === 0 ? true : false}
             >
               <span id="done">DONE</span>
             </button>

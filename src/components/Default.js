@@ -82,7 +82,8 @@ class Default extends Component {
     let userEmail = this.state.email;
     alert("Your email: " + userEmail);
     let userDomain = userEmail.split("@")[1].toLowerCase();
-    console.log(userDomain);
+    // console.log(userDomain);
+    // this.setState({ newDomain: userDomain });
     if (this.state.existingDomain.includes(userDomain)) {
       console.log(true);
       this.setState({ open: true });
@@ -95,7 +96,14 @@ class Default extends Component {
   render() {
     const { redirect } = this.state;
     if (redirect) {
-      return <Redirect to="/get-started-section" />;
+      return (
+        <Redirect
+          to={{
+            pathname: "/get-started-section"
+            // state: { newDomain: this.state.newDomain }
+          }}
+        />
+      );
     }
     return (
       <div className="Parent-Default">
