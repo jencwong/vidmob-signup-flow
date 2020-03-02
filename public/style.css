@@ -164,7 +164,7 @@ input {
 }
 
 ::placeholder {
-  width: 127px;
+  width: 165px;
   height: 20px;
   opacity: 0.5;
   font-family: "ProximaNova_regular";
@@ -525,6 +525,10 @@ a:hover {
   margin: 30px auto auto 16px;
 }
 
+.radio-deactivated {
+  margin: 20px 8px auto 32px;
+}
+
 .domain-default {
   width: 165px;
   height: 20px;
@@ -541,19 +545,103 @@ a:hover {
   text-indent: 0px;
   /* margin-left: 15px; */
   /* padding-left: 15px; */
-  border: 0px;
+  border: none;
   box-sizing: border-box;
   padding: 0px;
   margin: 15px 160px 15px 15px;
 }
 
-.domain_list {
-  padding: 0;
-  margin: 0;
+.domain-input {
+  display: none;
+  width: 135px;
+  height: 30px;
+  border: 0;
+  margin: 10px 0px;
+  padding-left: 15px;
+  outline: none;
 }
 
-.radio-deactivated {
-  margin: 20px 8px auto 32px;
+.domain-item {
+  width: 150px;
+  height: 30px;
+  border-radius: 2px;
+  border: solid 1px #e2e6eb;
+  opacity: 0.5;
+  font-family: "ProximaNova_regular";
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: #798898;
+}
+
+.domain-item:nth-child(odd) {
+  margin: 9px 9px auto 13px;
+  padding: 0px;
+}
+
+.domain-item:nth-child(even) {
+  margin: 9px 13px auto 9px;
+  padding: 0px;
+}
+
+.last-line {
+  margin-bottom: 10px;
+}
+
+/* #input-box7 {
+  margin-top: 0px;
+} */
+
+.domain_list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.domain-list-containter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 15px;
+  font-size: 14px;
+  margin-top: 5px;
+  /* background: purple; */
+}
+
+.domain-list-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  /* background: purple; */
+}
+
+.removeDomain-icon {
+  max-width: 15px;
+  height: 15px;
+  margin: 2.5px 7.5px 0 0;
+  background: purple;
+}
+
+.svg-toggle-button {
+  fill: rgba(121, 136, 152, 0.5);
+  width: 15px;
+  height: 15px;
+  background: orange;
+}
+
+.removeDomain-icon:hover {
+  #svg_1 {
+    fill: #de5454;
+  }
 }
 
 .Invite-only {
@@ -589,7 +677,12 @@ a:hover {
   width: 340px;
   border-radius: 2px;
   border: solid 1px #e2e6eb;
-  height: 50px;
+  min-height: 50px;
   box-sizing: border-box;
   margin: 20px 30px auto 30px;
+}
+.MyDomain:hover .domain-input {
+  background-color: red;
+  display: inline;
+  /* align-self: flex-end; */
 }
