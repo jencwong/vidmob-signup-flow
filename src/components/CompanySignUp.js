@@ -1,6 +1,51 @@
 import React, { Component } from "react";
+// import radioActivated from "../assets/ic-clear.png";
+// import radioDeactivated from "../assets/ct-radio-deactivated.png";
+import MyDomain from "./MyDomain";
+
+const radioActivated = "images/ic-selected.png";
+const radioDeactivated = "images/ct-radio-deactivated.png";
 
 class CompanySignUp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      getDomain: false,
+      domains: [],
+      inviteOnly: false
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  onClickDomains = event => {
+    this.setState({ getDomain: true, inviteOnly: false });
+  };
+
+  onClickInvite = event => {
+    this.setState({ getDomain: false, inviteOnly: true });
+  };
+
+  onDomainsChange = domain => {
+    this.setState({ domains: domain });
+  };
+
+  // this.handleChange = this.handleChange.bind(this);
+  // this.handleSubmit = this.handleSubmit.bind(this);
+
+  handleSubmit(event) {
+    let domain = this.setState({
+      domains: [...this.state.domains, event.target.value]
+    });
+    console.log(event.target.value);
+  }
+
+  //   addToDomains(domain) {
+  //     this.setState({
+  //       domains: [...this.state.domains, domain]
+  //     });
+  //   }
+
   render() {
     return (
       <div id="company-signup-section">
@@ -15,12 +60,19 @@ class CompanySignUp extends Component {
             <div className="sign-up-container">
               <img
                 className="ic_selected"
-                src="images/ic-selected.png"
+                src={this.state.getDomain ? radioActivated : radioDeactivated}
                 alt="selected-radio"
+                onClick={this.onClickDomains}
               ></img>
               <p className="Any-email-from-my-do">Any email from my domains</p>
             </div>
-            <input
+
+            <MyDomain
+              domainIsInput={this.state.getDomain}
+              onDomainsChange={this.onDomainsChange}
+            />
+
+            {/* <input
               className="Input-Frame"
               type="text"
               placeholder="Enter one or more domain..."
@@ -28,17 +80,23 @@ class CompanySignUp extends Component {
               name="text"
               domains={this.props.domains}
               onChange={event => this.handleChange(event)}
-            ></input>
+            ></input> */}
             <div className="sign-up-container">
               <img
                 className="radio-deactivated"
-                src="images/ct-radio-deactivated.png"
+                src={this.state.inviteOnly ? radioActivated : radioDeactivated}
                 alt="radio-deactivated"
+                onClick={this.onClickInvite}
               ></img>
               <p className="Invite-only">Invite only</p>
             </div>
-            <button className="signup">
-              <span ID="done">DONE</span>
+            <button
+              type="submit"
+              className="signup"
+              onClick={this.handleSubmit}
+              disabled={this.state.domains.length === 0 ? true : false}
+            >
+              <span id="done">DONE</span>
             </button>
           </form>
         </div>
