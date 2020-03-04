@@ -37,7 +37,7 @@ class GetStarted extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let userCompany = this.state.company;
+    let userCompany = this.state.company.toLowerCase();
     console.log(userCompany);
     if (this.state.existingCompany.includes(userCompany)) {
       console.log(true);
