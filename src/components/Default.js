@@ -159,7 +159,7 @@ class Default extends Component {
                 login
               </a>{" "}
               or{" "}
-              <a className="toolTip?inks" href="/reset">
+              <a className="toolTipLinks" href="/reset">
                 reset your password?
               </a>
             </p>
