@@ -88,10 +88,9 @@ class Default extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let userEmail = this.state.email;
-    alert("Your email: " + userEmail);
+    // alert("Your email: " + userEmail);
     let userDomain = userEmail.split("@")[1].toLowerCase();
-    // console.log(userDomain);
-    // this.setState({ newDomain: userDomain });
+
     if (
       this.state.existingDomain.includes(userDomain) &&
       !this.state.existingEmail.includes(userEmail)
@@ -209,7 +208,7 @@ class Default extends Component {
               className="popup-background2"
               open={this.state.personal}
               closeOnDocumentClick
-              onClose={this.closeModal2}
+              onClick={this.closeModal2}
               styles={bg}
             >
               <div>
@@ -224,6 +223,7 @@ class Default extends Component {
               <div className="buttons-container">
                 <button className="back">
                   <span id="back">BACK</span>
+                  <a href="/"></a>
                 </button>
                 <button className="continue">
                   <span id="back">CONTINUE</span>
