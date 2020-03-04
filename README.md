@@ -31,16 +31,21 @@ Tried to use tooltip from reactstrap and react-tooltip but could not get to work
 No API hookups and data(i.e. existing domains, emails, companies, personal domains) used to run the workflow were coded in the components directly.  
 
 ### Screenshots of the Views
-![alt text](https://i.imgur.com/qAgBeMr.png “Default view”)
-![alt text](https://i.imgur.com/wF3CsZ8.png “Existing company 1st state”)
-![alt text](https://i.imgur.com/wTO8WT7.png “Existing company 2nd state”)
-![alt text](https://i.imgur.com/wolhG63.png “New company 1st state”)
-![alt text](https://i.imgur.com/1YELio5.png “New company 2nd state”)
-![alt text](https://i.imgur.com/VfC8aQ5.png “New company 3rd state”)
-![alt text](https://i.imgur.com/aks112q.png “New company 4th state”)
-![alt text](https://i.imgur.com/O5wlFHa.png “Existing Email Error”)
-![alt text](https://i.imgur.com/TzvcBjX.png “Existing Company Error”)
-![alt text](https://i.imgur.com/5ee28Ef.png “Personal Email Error”)
+
+![alt text](https://i.imgur.com/qAgBeMr.png "Default view")
+![alt text](https://i.imgur.com/wF3CsZ8.png "Existing company 1st state")
+![alt text](https://i.imgur.com/wTO8WT7.png "Existing company 2nd state")
+![alt text](https://i.imgur.com/wolhG63.png "New company 1st state")
+![alt text](https://i.imgur.com/1YELio5.png "New company 2nd state")
+![alt text](https://i.imgur.com/VfC8aQ5.png "New company 3rd state")
+![alt text](https://i.imgur.com/aks112q.png "New company 4th state")
+![alt text](https://i.imgur.com/O5wlFHa.png "Existing Email Error")
+![alt text](https://i.imgur.com/TzvcBjX.png "Existing Company Error")
+![alt text](https://i.imgur.com/5ee28Ef.png "Personal Email Error")
+
+
+
+
 
 
 
