@@ -10,7 +10,18 @@ class GetStarted extends Component {
       displayname: "",
       password: "",
       company: "",
-      redirect: false
+      redirect: false,
+      existingCompany: [
+        "vidmob",
+        "facebook",
+        "amazon",
+        "bloomberg",
+        "apple",
+        "beeswax",
+        "twillio"
+      ],
+      errorCompany: false,
+      errMessage: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,11 +32,22 @@ class GetStarted extends Component {
     this.setState({ lastname: event.target.value });
     this.setState({ displayname: event.target.value });
     this.setState({ password: event.target.value });
+    this.setState({ company: event.target.value });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({ redirect: true });
+    let userCompany = this.state.company;
+    console.log(userCompany);
+    if (this.state.existingCompany.includes(userCompany)) {
+      console.log(true);
+      this.setState({ errorCompany: true });
+      this.setState({
+        errMessage: "That company looks like it already exists. Try to "
+      });
+    } else {
+      this.setState({ redirect: true });
+    }
   }
 
   render() {
@@ -35,7 +57,6 @@ class GetStarted extends Component {
         <Redirect
           to={{
             pathname: "/company-signup-section"
-            // state: { newDomain: this.props.location.state.newDomain }
           }}
         />
       );
@@ -87,7 +108,9 @@ class GetStarted extends Component {
               onChange={event => this.handleChange(event)}
             ></input>
             <input
-              className="Input-Frame"
+              className={
+                this.state.errMessage ? "Input-Email-Red" : "Input-Email-Frame"
+              }
               type="text"
               placeholder="Company Name"
               id="input-box6"
@@ -99,6 +122,15 @@ class GetStarted extends Component {
               <span id="signup">SIGN UP</span>
             </button>
           </form>
+          {this.state.errMessage && (
+            <p className="errTooltip2">
+              {this.state.errMessage}{" "}
+              <a className="toolTipLinks" href="/">
+                Find My Team
+              </a>{" "}
+              using your work email.{" "}
+            </p>
+          )}
           <div className="terms-container">
             <p className="terms">
               By selecting Sign Up, you agree to our{" "}

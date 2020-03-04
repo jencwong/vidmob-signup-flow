@@ -1,8 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Popup from "reactjs-popup";
 import { Redirect } from "react-router-dom";
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-// import { withRouter } from "react-router";
 
 const bg = {
   overlay: {
@@ -14,7 +12,14 @@ class Default extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      existingEmail: false,
+      existingEmail: [
+        "scooks@snapchat.com",
+        "plauria@facebook.com",
+        "mkreider@amazon.com",
+        "dwong@apple.com",
+        "rbadolato@beeswax.com",
+        "daniel@vidmob.com"
+      ],
       existingDomain: [
         "vidmob.com",
         "facebook.com",
@@ -24,45 +29,40 @@ class Default extends Component {
         "beeswax.com",
         "twillio.com"
       ],
+      personalEmail: [
+        "aol.com",
+        "att.net",
+        "comcast.net",
+        "facebook.com",
+        "gmail.com",
+        "gmx.com",
+        "googlemail.com",
+        "google.com",
+        "hotmail.com",
+        "hotmail.co.uk",
+        "mac.com",
+        "me.com",
+        "mail.com",
+        "msn.com",
+        "live.com",
+        "sbcglobal.net",
+        "verizon.net",
+        "yahoo.com",
+        "yahoo.co.uk"
+      ],
       existingCompany: false,
       email: "",
       redirect: false,
-      open: false
+      open: false,
+      errorEmail: false,
+      errorMessage: "",
+      personal: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-
-    // this.isDomainGood = this.isDomainGood.bind(this);
-
-    // const existingEmail = [
-    //   "scooks@vidmob.com",
-    //   "plauria@facebook.com",
-    //   "mkreider@amazon.com",
-    //   "dwong@apple.com",
-    //   "rbadolato@beeswax.com",
-    //   "daniel@vidmob.com"
-    // ];
-
-    // const existingDomain = [
-    //   "vidmob.com",
-    //   "facebook.com",
-    //   "amazon.com",
-    //   "bloomberg.com",
-    //   "apple.com",
-    //   "beeswax.com",
-    //   "twillio.com"
-    // ];
-    // const existingCompany = [
-    //   "vidmob",
-    //   "facebook",
-    //   "amazon",
-    //   "bloomberg",
-    //   "apple",
-    //   "beeswax",
-    //   "twillio"
-    // ];
+    this.openModal2 = this.openModal2.bind(this);
   }
 
   openModal() {
@@ -71,6 +71,14 @@ class Default extends Component {
 
   closeModal() {
     this.setState({ open: false });
+  }
+
+  openModal2() {
+    this.setState({ personal: true });
+  }
+
+  closeModal2() {
+    this.setState({ personal: false });
   }
 
   handleChange(event) {
@@ -84,9 +92,22 @@ class Default extends Component {
     let userDomain = userEmail.split("@")[1].toLowerCase();
     // console.log(userDomain);
     // this.setState({ newDomain: userDomain });
-    if (this.state.existingDomain.includes(userDomain)) {
+    if (
+      this.state.existingDomain.includes(userDomain) &&
+      !this.state.existingEmail.includes(userEmail)
+    ) {
       console.log(true);
       this.setState({ open: true });
+    } else if (this.state.existingEmail.includes(userEmail)) {
+      console.log(true);
+      this.setState({ errorEmail: true });
+      this.setState({
+        errorMessage:
+          "That email looks like it's already taken. Do you want to "
+      });
+    } else if (this.state.personalEmail.includes(userDomain)) {
+      console.log("personal email!");
+      this.setState({ personal: true });
     } else {
       console.log(false);
       this.setState({ redirect: true });
@@ -100,7 +121,6 @@ class Default extends Component {
         <Redirect
           to={{
             pathname: "/get-started-section"
-            // state: { newDomain: this.state.newDomain }
           }}
         />
       );
@@ -114,19 +134,38 @@ class Default extends Component {
             <div className="Rectangle"></div>
             <div id="text-input">
               <input
-                className="Input-Email-Frame"
-                type="text"
+                className={
+                  this.state.errorMessage
+                    ? "Input-Email-Red"
+                    : "Input-Email-Frame"
+                }
+                type="email"
                 placeholder="name@company.com"
                 id="input-box1"
+                error={this.state.error}
                 name="email"
                 domain={this.props.existingDomain}
                 onChange={event => this.handleChange(event)}
               ></input>
+
               <button className="next">
                 <span id="next">NEXT</span>
               </button>
             </div>
           </form>
+          {this.state.errorMessage && (
+            <p className="errTooltip">
+              {this.state.errorMessage}{" "}
+              <a className="toolTipLinks" href="/">
+                login
+              </a>{" "}
+              or{" "}
+              <a className="toolTipLinks" href="/reset">
+                reset your password
+              </a>
+            </p>
+          )}
+
           <div>
             <Popup
               className="popup-background"
@@ -161,9 +200,34 @@ class Default extends Component {
                   <h3 id="popup-header">That looks familiar</h3>
                   <p id="popup-text">
                     That email looks like it's part of an existing company.
-                    Check your email for an invite to your company.
                   </p>
                 </div>
+              </div>
+            </Popup>
+
+            <Popup
+              className="popup-background2"
+              open={this.state.personal}
+              closeOnDocumentClick
+              onClose={this.closeModal2}
+              styles={bg}
+            >
+              <div>
+                <h3 id="popup-header2">That looks like a personal email</h3>
+                <p id="popup-text2">
+                  Press continue to create a new team, or go back to try finding
+                  your team instead.
+                </p>
+              </div>
+              <div className="Rectangle2"></div>
+
+              <div className="buttons-container">
+                <button className="back">
+                  <span id="back">BACK</span>
+                </button>
+                <button className="continue">
+                  <span id="back">CONTINUE</span>
+                </button>
               </div>
             </Popup>
           </div>

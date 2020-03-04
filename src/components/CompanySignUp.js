@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// import radioActivated from "../assets/ic-clear.png";
-// import radioDeactivated from "../assets/ct-radio-deactivated.png";
 import MyDomain from "./MyDomain";
 
 const radioActivated = "images/ic-selected.png";
@@ -12,20 +10,12 @@ class CompanySignUp extends Component {
     this.state = {
       getDomain: false,
       domains: [],
-      //   domains: ["sample.com", "test.com", "ymail.com"],
+
       inviteOnly: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  //   componentDidMount() {
-  //     console.log("hello");
-  //     console.log(this.props.location.state.newDomain);
-  //     this.setState({
-  //       domains: [...this.state.domains, this.props.location.state.newDomain]
-  //     });
-  //   }
 
   onClickDomains = event => {
     this.setState({ getDomain: true, inviteOnly: false });
@@ -39,21 +29,12 @@ class CompanySignUp extends Component {
     this.setState({ domains: domain });
   };
 
-  // this.handleChange = this.handleChange.bind(this);
-  // this.handleSubmit = this.handleSubmit.bind(this);
-
   handleSubmit(event) {
     let domain = this.setState({
       domains: [...this.state.domains, event.target.value]
     });
     console.log(event.target.value);
   }
-
-  //   addToDomains(domain) {
-  //     this.setState({
-  //       domains: [...this.state.domains, domain]
-  //     });
-  //   }
 
   render() {
     return (
@@ -82,15 +63,6 @@ class CompanySignUp extends Component {
               domains={this.state.domains}
             />
 
-            {/* <input
-              className="Input-Frame"
-              type="text"
-              placeholder="Enter one or more domain..."
-              id="input-box7"
-              name="text"
-              domains={this.props.domains}
-              onChange={event => this.handleChange(event)}
-            ></input> */}
             <div className="sign-up-container">
               <img
                 className="radio-deactivated"
@@ -104,7 +76,6 @@ class CompanySignUp extends Component {
               type="submit"
               className="signup"
               onClick={this.handleSubmit}
-              //   disabled={this.state.domains.length === 0 ? true : false}
             >
               <span id="done">DONE</span>
             </button>

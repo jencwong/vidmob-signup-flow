@@ -25,21 +25,6 @@ class MyDomain extends Component {
     }
   };
 
-  //   inputDomain = event => {
-  //     let val = event.target.value;
-  //     if (event.key === val && "Enter") {
-  //       if (this.state.domains.find(domain => domain.toLowerCase() === val)) {
-  //         return;
-  //       }
-  //       let newDomains = [...this.props.domains, val];
-  //       this.setState({ domains: newDomains });
-  //       this.MyDomain.value = null;
-  //       this.props.onDomainChange(newDomains);
-  //     } else if (event.key === !val && "Backspace") {
-  //       this.deleteDomain();
-  //     }
-  //   };
-
   deleteDomain = index => {
     let newDomains = [...this.props.domains];
     newDomains.splice(index, 1);
@@ -88,14 +73,14 @@ class MyDomain extends Component {
       <div className="MyDomain">
         <ul className="domain_list">
           {this.props.domains.map((domain, index) => {
-            let editableDomainClass;
+            let editableDomainId;
             if (index === this.props.domains.length - 1) {
-              editableDomainClass = "last-line";
+              editableDomainId = "last-line";
             } else {
-              editableDomainClass = "";
+              editableDomainId = "";
             }
             return (
-              <li className={"domain-item" + editableDomainClass} key={domain}>
+              <li className={"domain-item"} id={editableDomainId} key={domain}>
                 <div className="domain-list-containter">
                   <div className="domain-list-text">{domain}</div>
                   <div
@@ -105,19 +90,17 @@ class MyDomain extends Component {
                     }}
                   >
                     <svg
-                      className="svg-toggle-button"
                       width="15"
                       height="15"
                       xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
                     >
                       <g>
                         <title>background</title>
                         <rect
                           fill="none"
                           id="canvas_background"
-                          height="402"
-                          width="582"
+                          height="17"
+                          width="17"
                           y="-1"
                           x="-1"
                         />
@@ -125,13 +108,13 @@ class MyDomain extends Component {
                       <g>
                         <title>Layer 1</title>
                         <path
-                          //   className="svg-toggle-button"
-                          fill="#e5e5e5"
-                          id="svg_1"
-                          d="m16,4c-6.617,0 -12,5.383 -12,12s5.383,12 12,12s12,-5.383 12,-12s-5.383,-12 -12,-12m0,-2c7.732,0 14,6.268 14,14s-6.268,14 -14,14s-14,-6.268 -14,-14s6.268,-14 14,-14l0,0zm3.536,9.05l1.414,1.414l-3.536,3.536l3.536,3.536l-1.414,1.414l-3.536,-3.536l-3.536,3.536l-1.414,-1.414l3.536,-3.536l-3.536,-3.536l1.414,-1.414l3.536,3.536l3.536,-3.536z"
+                          stroke="null"
+                          fill="#b2b2b2"
+                          className="svg-toggle-button"
+                          d="m7.604493,1.612743c-3.255508,0 -5.903899,2.555866 -5.903899,5.69764s2.648391,5.69764 5.903899,5.69764s5.9039,-2.555866 5.9039,-5.69764s-2.648391,-5.69764 -5.9039,-5.69764m0,-0.949607c3.80408,0 6.887883,2.976068 6.887883,6.647247s-3.083803,6.647247 -6.887883,6.647247s-6.887882,-2.976068 -6.887882,-6.647247s3.083803,-6.647247 6.887882,-6.647247l0,0zm1.739683,4.296971l0.695676,0.671371l-1.739682,1.678905l1.739682,1.678905l-0.695676,0.671372l-1.739683,-1.678905l-1.739682,1.678905l-0.695676,-0.671372l1.739682,-1.678905l-1.739682,-1.678905l0.695676,-0.671371l1.739682,1.678904l1.739683,-1.678904z"
                         />
                       </g>
-                    </svg>{" "}
+                    </svg>
                   </div>
                 </div>
               </li>

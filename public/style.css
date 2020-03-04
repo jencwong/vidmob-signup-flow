@@ -111,6 +111,7 @@ body {
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
   margin-top: -9%;
+  /* margin-top: -336px; */
 }
 
 .Get-started-on-VidMo {
@@ -158,6 +159,14 @@ body {
   margin: 20px 30px auto 30px;
 }
 
+.Input-Email-Red {
+  width: 340px;
+  height: 50px;
+  border-radius: 2px;
+  border: solid 1px #de5454;
+  margin: 20px 30px auto 30px;
+}
+
 input {
   font-family: "ProximaNova_regular";
   text-indent: 15px;
@@ -187,6 +196,8 @@ input {
   border: solid 1px #e2e6eb;
   background-color: #2c9db7;
   margin: 20px 30px 40px 220px;
+  float: right;
+  position: absolute;
 }
 
 #next {
@@ -232,7 +243,7 @@ a:hover {
   cursor: auto;
 }
 
-.popup-content,
+/* .popup-content, */
 .popup-background-content {
   width: 320px !important;
   height: 320px;
@@ -347,6 +358,11 @@ a:hover {
   box-sizing: border-box;
 }
 
+#text-input {
+  box-sizing: border-box;
+  width: 0px;
+  max-height: 74px;
+}
 #input-box2 {
   margin: 20px 5px auto 30px;
   padding: 0px;
@@ -461,7 +477,7 @@ a:hover {
 
 .company-signup-container {
   width: 400px;
-  height: 428px;
+  min-height: 428px;
   border-radius: 2px;
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
@@ -576,19 +592,22 @@ a:hover {
   letter-spacing: -0.2px;
   text-align: left;
   color: #798898;
+  box-sizing: border-box;
 }
 
 .domain-item:nth-child(odd) {
-  margin: 9px 9px auto 13px;
+  margin: 10px 5px auto 15px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 .domain-item:nth-child(even) {
-  margin: 9px 13px auto 9px;
+  margin: 10px 15px auto 10px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
-.last-line {
+#last-line {
   margin-bottom: 10px;
 }
 
@@ -597,6 +616,7 @@ a:hover {
 } */
 
 .domain_list {
+  width: 400px;
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -628,20 +648,19 @@ a:hover {
   max-width: 15px;
   height: 15px;
   margin: 2.5px 7.5px 0 0;
-  background: purple;
+  /* background: purple; */
 }
 
 .svg-toggle-button {
   fill: rgba(121, 136, 152, 0.5);
   width: 15px;
   height: 15px;
-  background: orange;
+  /* background: orange; */
 }
 
-.removeDomain-icon:hover {
-  #svg_1 {
-    fill: #de5454;
-  }
+.removeDomain-icon:hover .svg-toggle-button {
+  fill: red;
+  /* background-color: royalblue; */
 }
 
 .Invite-only {
@@ -682,7 +701,190 @@ a:hover {
   margin: 20px 30px auto 30px;
 }
 .MyDomain:hover .domain-input {
-  background-color: red;
+  /* background-color: red; */
   display: inline;
   /* align-self: flex-end; */
+}
+
+/* Custom Tooltip */
+
+.errTooltip {
+  position: relative;
+  display: inline-block;
+  background-color: #de5454;
+  width: 200px;
+  height: 83px;
+  box-sizing: border-box;
+  top: -155px;
+  right: -100px;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 2px;
+  font-family: "ProximaNova_regular";
+  z-index: 1;
+  padding: 13px 15px 18px 15px;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: -0.2px;
+}
+
+.errTooltip .tooltiptext {
+  visibility: visible;
+  /* background-color: #de5454; */
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.errTooltip:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #de5454 transparent transparent transparent;
+}
+
+.toolTipLinks {
+  text-decoration: none;
+  font-family: "ProximaNova_bold";
+  color: #ffffff;
+}
+
+.errTooltip2 {
+  position: relative;
+  display: inline-block;
+  background-color: #de5454;
+  width: 200px;
+  height: 83px;
+  box-sizing: border-box;
+  top: -265px;
+  right: -100px;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 2px;
+  font-family: "ProximaNova_regular";
+  z-index: 1;
+  padding: 13px 15px 18px 15px;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: -0.2px;
+}
+
+.errTooltip2 .tooltiptext {
+  visibility: visible;
+  /* background-color: #de5454; */
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.errTooltip2:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #de5454 transparent transparent transparent;
+}
+
+/* Custom Modal Error - Personal Emal */
+.popup-background2-content {
+  width: 400px !important;
+  height: 200px;
+  border-radius: 2px;
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+}
+
+#popup-header2 {
+  width: 340px;
+  height: 20px;
+  font-family: "ProximaNova_regular";
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #283647;
+  margin: 30px 30px auto 30px;
+}
+
+#popup-text2 {
+  width: 340px;
+  height: 40px;
+  font-family: "ProximaNova_regular";
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: -0.2px;
+  color: #798898;
+  margin: 5px 30px auto 30px;
+}
+
+.Rectangle2 {
+  width: 340px;
+  height: 1px;
+  background-color: #e2e6eb;
+  margin: 30px 30px auto 30px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.back {
+  width: 100px;
+  height: 34px;
+  border-radius: 100px;
+  background-color: #798898;
+  margin: 20px 5px 20px 165px;
+  border: none;
+}
+
+#back {
+  width: 30px;
+  height: 13px;
+  font-family: "ProximaNova_bold";
+  font-size: 11px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.continue {
+  width: 100px;
+  height: 34px;
+  border-radius: 100px;
+  background-color: #2c9db7;
+  margin: 20px 30px 20px 0;
+  border: none;
 }
