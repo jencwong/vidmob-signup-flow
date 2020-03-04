@@ -1,68 +1,40 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### VidMob Default View
 
-In the project directory, you can run:
+Window prompting user to enter work email.  There are four conditions in this view:
+-If the work email's domain is recognized, a modal pops up to inform user to check for an invite.  
+-If the work email's domain is not recognized, the page is automatically redirected to a new company sign-up page.
+-If the work email's exists, a tooltip appears with a message for user to either login or reset the password.
+-If the user enters a personal email, a modal shows to continue create a new team or go back to find the team.  
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### VidMob Existing Company Sign-Up View
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+When the user clicks to close the modal, the page redirects to sign-up view with a form for the user to enter first name, last name, display name (which is optional), and password.  
 
-### `yarn test`
+### VidMob New Company Sign-Up View
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+User is prompted to enter first name, last name, display name (optional), password, and associated company.  If the user enters an existing company a tooltip pops up to promt the user to click on the find their team link.  
 
-### `yarn build`
+Upon clicking on the sign-up button, the page redirects to company sign-up mode view.  The user has the options to click on the first radio to enter email from associated domains or to choose by invite only.  
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When the user enters a domain, the domain name is listed in the input field with a cross check button for user to remove the domain if needed.  On key press down, the cursor reappears for user to enter domain names.  On clicking inside the input field, user can add more domains.  
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Frameworks and Libraries used
+- React
+- Redirect from react-router-dom
+- Modal popup from reactjs-popup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Tried to use tooltip from reactstrap and react-tooltip but could not get to work (with the condition if/else and setState), ended up creating my own tooltip from CSS.  
 
-### `yarn eject`
+No API hookups and data(i.e. existing domains, emails, companies, personal domains) used to run the workflow were coded in the components directly.  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Screenshots of the Views
+![default_view](https://i.imgur.com/qAgBeMr.png “Default view”)
+![alt text](https://i.imgur.com/cFPUSP0.png “Questionnaire”)
+![alt text](https://i.imgur.com/YbesbpF.png “Results”)
+![alt text](https://i.imgur.com/IlS6s2x.png “Relationship between Models”)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
