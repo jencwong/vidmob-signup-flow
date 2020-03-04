@@ -3,10 +3,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### VidMob Default View
 
 Window prompting user to enter work email.  There are four conditions in this view:
--If the work email's domain is recognized, a modal pops up to inform user to check for an invite.  
--If the work email's domain is not recognized, the page is automatically redirected to a new company sign-up page.
--If the work email's exists, a tooltip appears with a message for user to either login or reset the password.
--If the user enters a personal email, a modal shows to continue create a new team or go back to find the team.  
+- If the work email's domain is recognized, a modal pops up to inform user to check for an invite.  
+- If the work email's domain is not recognized, the page is automatically redirected to a new company sign-up page.
+- If the work email's exists, a tooltip appears with a message for user to either login or reset the password.
+- If the user enters a personal email, a modal shows to continue create a new team or go back to find the team.  
 
 
 ### VidMob Existing Company Sign-Up View
